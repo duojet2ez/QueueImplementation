@@ -62,7 +62,7 @@ void Test()
 int main()
 {
 	Test(); 
-	return 0; 
+	return 0;
 }
 
 
