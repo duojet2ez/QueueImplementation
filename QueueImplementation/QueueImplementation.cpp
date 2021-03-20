@@ -7,12 +7,12 @@ class Queue
 {
 public:
 
-	void Enqueue(int data);
-	int Dequeue();
-	bool Is_Empty();
+	void Enqueue(int data);  //good
+	int Dequeue();    //good
+	bool Is_Empty();   //good
 	int Size();
-	int Get_Front();
-	void PrintQueue();
+	int Get_Front();   
+	void PrintQueue();    //good
 
 };
 
@@ -29,10 +29,10 @@ int Queue::Dequeue()
 
 bool Queue::Is_Empty()
 {
-	//if (!QueueContainer.head)
-		//return true;
+	if (!QueueContainer.head)
+		return true;
 
-	//else
+	else
 		return false; 
 }
 
@@ -57,7 +57,19 @@ void Test()
 	thisIsAQueue.Enqueue(15); 
 	thisIsAQueue.Enqueue(16); 
 	thisIsAQueue.PrintQueue(); 
-	thisIsAQueue.Dequeue();
+	
+	
+	try
+	{
+		thisIsAQueue.Dequeue();
+	}
+	catch (int x) { std::cout << "Null head! Error #" << x << std::endl; }
+
+
+	if (thisIsAQueue.Is_Empty())
+	{
+		std::cout << "This queue is empty"; 
+	}
 }
 int main()
 {

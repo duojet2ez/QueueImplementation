@@ -187,13 +187,26 @@ int LinkedList::RemoveFromEnd()
 	else
 	{
 		node* temp = head;
+		node* tempTrailing = head;
 		int data;
-		while (temp->next != NULL)
+		int counter = 0; 
+		if (!temp->next)
 		{
-			temp = temp->next;
+			data = temp->value;
+			delete temp;
+			head = nullptr;
+			return data; 
+		}
+		while (temp->next)
+		{
+			temp = temp->next; 
+			if (counter > 0)
+				tempTrailing = tempTrailing->next;
+			counter++; 
 		}
 		data = temp->value; 
 		delete temp; 
+		tempTrailing->next = nullptr; 
 		return data; 
 	}
 	return 0; 
@@ -217,3 +230,13 @@ void LinkedList::Clear(node* head)
 	delete temp;
 	Clear(head);
 }
+
+
+
+//pointer to pointer ...points at the last nodes next pointer
+/*T** p = &list_start;
+while (*p) {
+	p = &(*p)->next;
+}
+*p = new T
+*/;
