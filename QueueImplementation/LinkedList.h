@@ -19,7 +19,9 @@ public:
 	void Print(node* head);
 	void Remove(int value);
 	int RemoveFromEnd(); 
+	int PeekFromEnd();
 	void Clear(node* head);
+	int Size(); 
 
 
 	node* head;
@@ -232,11 +234,32 @@ void LinkedList::Clear(node* head)
 }
 
 
+int LinkedList::Size()
+{
+	if (!head)
+		return 0; 
 
-//pointer to pointer ...points at the last nodes next pointer
-/*T** p = &list_start;
-while (*p) {
-	p = &(*p)->next;
+	node* temp = head;
+	int counter = 0; 
+	while (temp)
+	{
+		counter++;
+		temp = temp->next; 
+	}
+	return counter; 
 }
-*p = new T
-*/;
+
+int LinkedList::PeekFromEnd()
+{
+	if (!head)
+	{
+		throw 2;
+	}
+	node* temp = head;
+	while (temp->next)
+	{
+		temp = temp->next;
+	}
+
+	return temp->value; 
+}

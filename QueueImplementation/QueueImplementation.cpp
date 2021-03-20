@@ -6,14 +6,12 @@ LinkedList QueueContainer;
 class Queue
 {
 public:
-
-	void Enqueue(int data);  //good
-	int Dequeue();    //good
-	bool Is_Empty();   //good
-	int Size();
+	void Enqueue(int data);  
+	int Dequeue();    
+	bool Is_Empty();  
+	int Size();       
 	int Get_Front();   
-	void PrintQueue();    //good
-
+	void PrintQueue();    
 };
 
 void Queue::Enqueue(int data)
@@ -38,12 +36,13 @@ bool Queue::Is_Empty()
 
 int Queue::Size()
 {
-	return 0;
+
+	return QueueContainer.Size();
 }
 
 int Queue::Get_Front()
 {
-	return 0; 
+	return QueueContainer.PeekFromEnd(); 
 }
 
 void Queue::PrintQueue()
@@ -54,11 +53,14 @@ void Queue::PrintQueue()
 void Test()
 {
 	Queue thisIsAQueue;
-	thisIsAQueue.Enqueue(15); 
-	thisIsAQueue.Enqueue(16); 
-	thisIsAQueue.PrintQueue(); 
-	
-	
+
+
+	try
+	{
+		std::cout << thisIsAQueue.Get_Front();
+	}
+	catch (int x) { std::cout << "Null head! Nothing in queue Error #" << x << std::endl; }
+		
 	try
 	{
 		thisIsAQueue.Dequeue();
@@ -70,6 +72,8 @@ void Test()
 	{
 		std::cout << "This queue is empty"; 
 	}
+
+	
 }
 int main()
 {
