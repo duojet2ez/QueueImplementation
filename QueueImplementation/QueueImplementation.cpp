@@ -1,7 +1,7 @@
 #include<iostream>
 #include "LinkedList.h"
 
-LinkedList QueueContainer; 
+/*LinkedList QueueContainer; 
 
 
 class Queue
@@ -75,10 +75,10 @@ void Test()
 	}
 
 	
-}
+}*/
 int main()
 {
-	Test(); 
+	//Test(); 
 	return 0;
 }
 
