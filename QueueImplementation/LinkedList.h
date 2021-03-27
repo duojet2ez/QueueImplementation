@@ -19,10 +19,10 @@ public:
 		//free memory 
 		if (!head)
 			return;
-		node* temp = head;
+		node<T>* temp = head;
 		while (temp->next != NULL)
 		{
-			node* temp2 = temp;
+			node<T>* temp2 = temp;
 			temp = temp->next;
 			delete temp2;
 		}

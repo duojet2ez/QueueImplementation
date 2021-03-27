@@ -1,19 +1,36 @@
 #include<iostream>
 #include "LinkedList.h"
 
-/*LinkedList QueueContainer; 
 
+LinkedList<int> QueueContainer;
 
+template<typename T>
 class Queue
 {
 public:
-	void Enqueue(int data);  
-	int Dequeue();    
-	bool Is_Empty();  
-	int Size();       
-	int Get_Front();   
-	void PrintQueue();    
+	void Enqueue(T data)
+	{
+		QueueContainer.PushForward(data);
+	}
+	T Dequeue();
+	bool Is_Empty();
+	T Size();
+	T Get_Front();
+	void PrintQueue();
 };
+
+int main()
+{
+	//Test(); 
+	return 0;
+}
+
+
+
+
+/*
+
+
 
 void Queue::Enqueue(int data)
 {
@@ -76,11 +93,6 @@ void Test()
 
 	
 }*/
-int main()
-{
-	//Test(); 
-	return 0;
-}
 
 
 
