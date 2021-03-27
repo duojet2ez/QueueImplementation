@@ -3,6 +3,7 @@
 
 LinkedList QueueContainer; 
 
+
 class Queue
 {
 public:
@@ -82,5 +83,5 @@ int main()
 }
 
 
-//make a queue with a linked list using the previous implementation of linked list as the header file
+
 //make it work for ints and then use template values. 
