@@ -12,11 +12,30 @@ public:
 	{
 		QueueContainer.PushForward(data);
 	}
-	T Dequeue();
-	bool Is_Empty();
-	T Size();
-	T Get_Front();
-	void PrintQueue();
+	T Dequeue()
+	{
+		return QueueContainer.RemoveFromEnd();
+	}
+	bool Is_Empty()
+	{
+		if (!QueueContainer.head)
+			return true;
+
+		else
+			return false;
+	}
+	T Size()
+	{
+		return QueueContainer.Size();
+	}
+	T Get_Front()
+	{
+		return QueueContainer.PeekFromEnd();
+	}
+	void PrintQueue()
+	{
+		QueueContainer.Print(QueueContainer.head);
+	}
 };
 
 int main()
@@ -32,41 +51,14 @@ int main()
 
 
 
-void Queue::Enqueue(int data)
-{
-	QueueContainer.PushForward(data); 
-}
 
-int Queue::Dequeue()
-{
 
-	return QueueContainer.RemoveFromEnd();
-}
 
-bool Queue::Is_Empty()
-{
-	if (!QueueContainer.head)
-		return true;
 
-	else
-		return false; 
-}
 
-int Queue::Size()
-{
 
-	return QueueContainer.Size();
-}
 
-int Queue::Get_Front()
-{
-	return QueueContainer.PeekFromEnd(); 
-}
 
-void Queue::PrintQueue()
-{
-	QueueContainer.Print(QueueContainer.head); 
-}
 
 void Test()
 {
