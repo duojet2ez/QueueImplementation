@@ -72,7 +72,7 @@ public:
 	}
 	void PushForward(T value)
 	{
-		node* insertedNode = new node();
+		node<T>* insertedNode = new node();
 		insertedNode->value = value;
 
 		if (head == NULL)
@@ -82,7 +82,7 @@ public:
 		}
 		else
 		{
-			node* temp = head;
+			node<T>* temp = head;
 			head = insertedNode;
 			head->next = temp;
 		}

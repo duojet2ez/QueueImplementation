@@ -40,7 +40,10 @@ public:
 
 int main()
 {
-	//Test(); 
+	Queue<int> thisIsAQueue; 
+	thisIsAQueue.Enqueue(10);
+
+
 	return 0;
 }
 
