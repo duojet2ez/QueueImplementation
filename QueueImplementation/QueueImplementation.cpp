@@ -24,7 +24,7 @@ public:
 		else
 			return false;
 	}
-	T Size()
+	int Size()
 	{
 		return QueueContainer.Size();
 	}
@@ -42,6 +42,17 @@ int main()
 {
 	Queue<int> thisIsAQueue; 
 	thisIsAQueue.Enqueue(10);
+	thisIsAQueue.Enqueue(11); 
+	thisIsAQueue.Dequeue(); 
+	thisIsAQueue.Enqueue(100);
+	thisIsAQueue.PrintQueue(); 
+	std::cout << "Size is: " << thisIsAQueue.Size() << std::endl; 
+	std::cout << "Front of queue is: " << thisIsAQueue.Get_Front() << std::endl;
+	thisIsAQueue.Is_Empty(); 
+	
+
+
+
 
 
 	return 0;

@@ -14,6 +14,7 @@ class LinkedList
 public:
 
 	LinkedList() { head = nullptr; }
+	node<T>* head;
 	~LinkedList()
 	{
 		//free memory 
@@ -72,7 +73,7 @@ public:
 	}
 	void PushForward(T value)
 	{
-		node<T>* insertedNode = new node();
+		node<T>* insertedNode = new node<T>();
 		insertedNode->value = value;
 
 		if (head == NULL)
@@ -158,8 +159,8 @@ public:
 
 		else
 		{
-			node* temp = head;
-			node* tempTrailing = head;
+			node<T>* temp = head;
+			node<T>* tempTrailing = head;
 			T data;
 			int counter = 0;
 			if (!temp->next)
@@ -189,7 +190,7 @@ public:
 		{
 			throw 2;
 		}
-		node* temp = head;
+		node<T>* temp = head;
 		while (temp->next)
 		{
 			temp = temp->next;
@@ -210,7 +211,7 @@ public:
 			this->head = NULL;
 			return;
 		}
-		node* temp = head;
+		node<T>* temp = head;
 		head = head->next;
 		delete temp;
 		Clear(head);
@@ -220,7 +221,7 @@ public:
 		if (!head)
 			return 0;
 
-		node* temp = head;
+		node<T>* temp = head;
 		int counter = 0;
 		while (temp)
 		{
@@ -229,5 +230,5 @@ public:
 		}
 		return counter;
 	}
-	node<T>* head;
+
 };
