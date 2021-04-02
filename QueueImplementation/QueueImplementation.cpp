@@ -45,6 +45,7 @@ int main()
 	thisIsAQueue.Enqueue(11); 
 	thisIsAQueue.Dequeue(); 
 	thisIsAQueue.Enqueue(100);
+	thisIsAQueue.Dequeue();
 	thisIsAQueue.PrintQueue(); 
 	std::cout << "Size is: " << thisIsAQueue.Size() << std::endl; 
 	std::cout << "Front of queue is: " << thisIsAQueue.Get_Front() << std::endl;
